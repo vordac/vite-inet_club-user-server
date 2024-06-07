@@ -35,12 +35,23 @@ const getConsoleController = require('./controllers/get/getConsoleController.js'
 const getSoftwareController = require('./controllers/get/getSoftwareController.js');
 const getTariffController = require('./controllers/get/getTariffController.js');
 
+// POST controllers
+const postSignInController = require('./controllers/post/postSignInController');
+const postSignUpController = require('./controllers/post/postSignUpController');
+const postReservationController = require('./controllers/post/postReservationController.js');
+const getOrderPriceController = require('./controllers/get/getOrderPriceController.js')
 
 // GET endpoints
 app.get('/get-computer', getComputerController.getComputer);
 app.get('/get-console', getConsoleController.getConsole);
 app.get('/get-software', getSoftwareController.getSoftware);
 app.get('/get-tariff', getTariffController.getTariff);
+app.get('/get-order-price', getOrderPriceController.getOrderPrice);
+
+// POST endpoints
+app.post('/post-sign-in', postSignInController.postSignIn);
+app.post('/post-sign-up', postSignUpController.postSignUp);
+app.post('/post-reservation', postReservationController.postReservation);
 
 const PORT = process.env.PORT || 5000;
 

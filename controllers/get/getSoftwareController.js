@@ -1,7 +1,7 @@
 const pool = require("../../db");
 
 exports.getSoftware = (req, res) => {
-    pool.query('SELECT software_id, software_name, operating_system FROM software', (error, results) => {
+    pool.query('SELECT software_id, software_name, operating_system FROM software ORDER BY software_id', (error, results) => {
         if (error) {
             throw error
         }
